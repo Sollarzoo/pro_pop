@@ -1,12 +1,10 @@
 //====== Coding by Solazo ====== 
 //========= Weibo Solazo ======= 
-//外观部分在display里
+
 
 class Pop {
   //===== 参数声明 ===== 
-  //外部数据
-  float size1, size2, size3, size4, size5, size6, size7, size8, size9, size10, size11, size12;
-  float size13, size14, size15, size16, size17, size18, size19, size20;
+ 
   float[] size = new float[cirLayer];
   float x, y;
   int cato;
