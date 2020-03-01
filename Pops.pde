@@ -22,10 +22,12 @@ class Pop {
     //传输数据
     row = Row;
     cato = row.getInt(0);
-    println(cato);
+    //println(cato);
     keyWords = row.getString(1);
-    println(cirLayer);
+   // println(cirLayer);
     //循环读取关键词的数量
+    
+    //疫情前的图 若要完整的请删除 -12
     for (int i = 2; i<size.length-12; i++) {
       size[i] = row.getInt(cirLayer-i-12)*scale;
     }    

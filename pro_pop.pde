@@ -1,6 +1,7 @@
 //====== 参数声明和库的引用======
 //====== 如需运行，请先安装Box2D库 ====== 
 //====== 请勿修改这一部分！！！====== 
+//====== 下方指示框时间大于10000才开始导出图 =====
 
 import shiffman.box2d.*;
 import org.jbox2d.collision.shapes.*;
@@ -14,7 +15,7 @@ PFont font;
 Pop[] pops;
 int numMax;
 int cirLayer;
-int time = millis();
+
 
 void loadData() {
 
@@ -29,16 +30,16 @@ void loadData() {
 
 //程序首次运行函数
 void setup() {
-  
-  size(800,800);
+
+  size(800, 800);
 
   smooth();
-  
+
   //==== 设置字体 ====
   font = createFont("YaHei.ttf", 32);
   box2d = new Box2DProcessing(this);
-  
-  
+
+
   box2d.createWorld();//初始化创建2d世界
   box2d.setGravity(0, 0);//设置全局重力
 
@@ -52,9 +53,15 @@ void setup() {
 
 //循环绘制函数
 void draw() {
+  int time = millis();
   background(0);  
   box2d.step();//推进时间
   for (Pop p : pops) {
     p.display();
+  }
+
+  println(time);
+  if (time > 10000 ) {
+     saveFrame("Pops.png");//保存为图片
   }
 }
